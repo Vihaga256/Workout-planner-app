@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+
+const kSubtitleColor = Color.fromARGB(255, 230, 230, 230);
+const kMainColor = Color(0xFF000000);
+const kMainWhiteColor = Color(0xFFFFFFFF);
+
+const kGradientTopColor = Color(0xFF0099FF);
+const kGradientBottomColor = Color(0xFF1444DD);
+
+const kCardBackgroundColor = Color(0xFFF5F5F5);
+final kCardButtonColor = Colors.grey[300];
+
+const kMainPinkColor = Colors.pink;
+const kBoxShadow = Color.fromARGB(193, 211, 211, 211);
+const kTimecolor = Color.fromARGB(255, 160, 160, 160);
