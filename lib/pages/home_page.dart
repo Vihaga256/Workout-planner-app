@@ -3,8 +3,9 @@ import 'package:demo_app_2/constants/constants_values.dart';
 import 'package:demo_app_2/data/equipment_data.dart';
 import 'package:demo_app_2/data/exercise_data.dart';
 import 'package:demo_app_2/data/user_data.dart';
+import 'package:demo_app_2/pages/equipemt_detail_page.dart';
 import 'package:demo_app_2/widget/exercise_card.dart';
-import 'package:demo_app_2/widget/exercise_detail_page.dart';
+import 'package:demo_app_2/pages/exercise_detail_page.dart';
 import 'package:demo_app_2/widget/progress_card.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -81,6 +82,42 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         );
+                        // Navigator.push(
+                        //   context,
+                        //   PageRouteBuilder(
+                        //     transitionDuration: const Duration(
+                        //       milliseconds: 400,
+                        //     ), // Speed of the slide
+                        //     pageBuilder:
+                        //         (context, animation, secondaryAnimation) =>
+                        //             ExerciseDetailPage(
+                        //               exerciseTitle: "Warmup",
+                        //               exerciseDescription:
+                        //                   "Warmup is a method of preparing...",
+                        //               exerciseList: exerciseList,
+                        //             ),
+                        //     transitionsBuilder:
+                        //         (
+                        //           context,
+                        //           animation,
+                        //           secondaryAnimation,
+                        //           child,
+                        //         ) {
+                        //           const begin = Offset(1.0, 0.0);
+                        //           const end = Offset.zero;
+                        //           const curve =
+                        //               Curves.easeInOut; // Smooth start and stop
+                        //           var tween = Tween(
+                        //             begin: begin,
+                        //             end: end,
+                        //           ).chain(CurveTween(curve: curve));
+                        //           return SlideTransition(
+                        //             position: animation.drive(tween),
+                        //             child: child,
+                        //           );
+                        //         },
+                        //   ),
+                        // );
                       },
                       child: ExerciseCard(
                         description: 'see more',
@@ -88,10 +125,25 @@ class _HomePageState extends State<HomePage> {
                         title: 'Yoga',
                       ),
                     ),
-                    ExerciseCard(
-                      description: 'see more',
-                      imageURL: 'assets/exercises/cobra.png',
-                      title: 'Yoga',
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EquipemtDetailPage(
+                              equipmentTitel: "equipmentTitel",
+                              equipmentDescription: "",
+                              equipmentList: equipmentList,
+                            ),
+                          ),
+                        );
+                      },
+                      // equipmentList
+                      child: ExerciseCard(
+                        description: 'see more',
+                        imageURL: 'assets/equipments/dumbbells2.png',
+                        title: 'Equipment',
+                      ),
                     ),
                   ],
                 ),
