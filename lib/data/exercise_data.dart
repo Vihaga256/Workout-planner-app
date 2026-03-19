@@ -71,6 +71,6 @@ class ExerciseData {
       nuOfMinutes: 15,
       id: 9,
       completed: false,
-    )
+    ),
   ];
 }

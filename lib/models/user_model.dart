@@ -25,6 +25,25 @@ class User {
     required this.favExerciseList,
     required this.favEquipmentList,
     required this.exerciseList,
-    required this.equipmentList, required int totlaExercisesCompleted, required int totlaEquipmentHandedOver,
+    required this.equipmentList,
+    required int totlaExercisesCompleted,
+    required int totlaEquipmentHandedOver,
   });
+
+  // Mothodes
+  void addExercise(Exercise exercise) {
+    exerciseList.add(exercise);
+  }
+
+  void removeExercise(Exercise exercise) {
+    exerciseList.remove(exercise);
+  }
+
+  void addFavoriteExercise(Exercise exercise) {
+    favExerciseList.add(exercise);
+  }
+
+  void removeFavoriteExercise(Exercise exercise) {
+    favExerciseList.remove(exercise);
+  }
 }

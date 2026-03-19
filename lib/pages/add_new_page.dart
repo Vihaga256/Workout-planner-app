@@ -34,7 +34,6 @@ class _AddNewPageState extends State<AddNewPage> {
                     color: kMainColor,
                   ),
                 ),
-                // SizedBox(height: 8),
                 Text(
                   "Let's Add Some Workout and Equipment for tody!",
                   style: TextStyle(
@@ -64,6 +63,30 @@ class _AddNewPageState extends State<AddNewPage> {
                         exerciseImageURL: exercise.exerciseImageURL,
                         exerciseName: exercise.exerciseName,
                         nuOfMinutes: exercise.nuOfMinutes,
+                        isAdd: user.exerciseList.contains(exercise),
+                        isFav: user.favExerciseList.contains(exercise),
+                        toggleAddExercise: () {
+                          setState(() {
+                            if (user.exerciseList.contains(exercise)) {
+                              user.removeExercise(exercise);
+                              print(user.exerciseList.length);
+                            } else {
+                              user.addExercise(exercise);
+                              print(user.exerciseList.length);
+                            }
+                          });
+                        },
+                        toggleAddFavoriteExercise: () {
+                          setState(() {
+                            if (user.favExerciseList.contains(exercise)) {
+                              user.removeFavoriteExercise(exercise);
+                              print(user.favExerciseList.length);
+                            } else {
+                              user.addFavoriteExercise(exercise);
+                              print(user.favExerciseList.length);
+                            }
+                          });
+                        }, index: index,
                       );
                     },
                   ),
